@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>سراج السنة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- الهيدر -->
+    <header class="header">
+      <div class="logo-icon"><i class="fas fa-mosque"></i></div>
+      <h1>سراج السنة</h1>
+      <p class="subtitle">﴿ فَاذْكُرُونِي أَذْكُرْكُمْ ﴾</p>
+    </header>
+
+    <!-- التبويبات الرئيسية -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="morning-evening">
+        <i class="fas fa-sun"></i> <span>الصباح والمساء</span>
+      </button>
+      <button class="tab-btn" data-tab="prayer">
+        <i class="fas fa-mosque"></i> <span>بعد الصلاة</span>
+      </button>
+      <button class="tab-btn" data-tab="supplications">
+        <i class="fas fa-hands"></i> <span>أدعية مباركة</span>
+      </button>
+      <button class="tab-btn" data-tab="sleep">
+        <i class="fas fa-bed"></i> <span>النوم والاستيقاظ</span>
+      </button>
+    </div>
+
+    <!-- محتوى أذكار الصباح والمساء -->
+    <div class="tab-content active" id="tab-morning-evening">
+      <!-- منتقي الوقت -->
+      <div class="time-picker">
+        <button class="time-btn active" data-time="morning">
+          <i class="fas fa-sun"></i> أذكار الصباح
+        </button>
+        <button class="time-btn" data-time="evening">
+          <i class="fas fa-moon"></i> أذكار المساء
+        </button>
+      </div>
+      <div class="azkar-list" id="morning-azkar"></div>
+      <div class="azkar-list hidden" id="evening-azkar"></div>
+    </div>
+
+    <!-- محتوى أذكار بعد الصلاة -->
+    <div class="tab-content hidden" id="tab-prayer">
+      <div class="section-title">
+        <i class="fas fa-hand-praying"></i>
+        <span>أذكار ما بعد الصلاة المفروضة</span>
+      </div>
+      <div class="azkar-list" id="prayer-azkar"></div>
+    </div>
+
+    <!-- محتوى الأدعية -->
+    <div class="tab-content hidden" id="tab-supplications">
+      <div class="section-title">
+        <i class="fas fa-dua"></i>
+        <span>أدعية من السنة النبوية</span>
+      </div>
+      <div class="azkar-list" id="supplications-list"></div>
+    </div>
+
+    <!-- محتوى أذكار النوم -->
+    <div class="tab-content hidden" id="tab-sleep">
+      <div class="time-picker">
+        <button class="time-btn active" data-time="before-sleep">
+          <i class="fas fa-bed"></i> قبل النوم
+        </button>
+        <button class="time-btn" data-time="wake-up">
+          <i class="fas fa-sun"></i> عند الاستيقاظ
+        </button>
+      </div>
+      <div class="azkar-list" id="before-sleep-azkar"></div>
+      <div class="azkar-list hidden" id="wake-up-azkar"></div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+      <p>سراج السنة — تذكير وذكرى للمؤمنين</p>
+      <p class="hadith">«خيركم من تعلم القرآن وعلمه»</p>
+    </footer>
+  </div>
+
+  <!-- كاونتر لتحديد العدد -->
+  <div class="counter-badge hidden" id="counterBadge">
+    <span id="counterText"></span>
+    <button id="counterClose"><i class="fas fa-times"></i></button>
+  </div>
+
+  <!-- صوت نقرة -->
+  <audio id="clickSound" preload="auto">
+    <source src="data:audio/mp3;base64,//uQxAAAAAACIAAAAAAANAAAAsICFAgAAAAA=" type="audio/mp3">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
